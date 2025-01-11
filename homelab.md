@@ -51,7 +51,7 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 sysctl --system
 ```
-##### Install docker engine
+##### Install Docker engine 
 ```
 yum install -y yum-utils device-mapper-persistent-data lvm2
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -83,7 +83,7 @@ yum install -y kubeadm kubelet kubectl
 ```
 systemctl enable --now kubelet
 ```
-## On master
+## On master node
 ##### Initialize Kubernetes Cluster
 ```
 Note:Its recommended to use to different network for API server and pod network
@@ -109,7 +109,7 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 ```
-## On worker1
+## On worker1 node
 ##### Join the cluster
 Use the output from __kubeadm token create__ command in previous step from the master server and run here.
 
